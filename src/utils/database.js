@@ -142,6 +142,56 @@ const defaultData = {
       maxStock: 45,
       category: 'cocktail'
     },
+    'daiquiri_sa': {
+      id: 'daiquiri_sa',
+      name: 'Daiquiri (Sin Alcohol)',
+      price: 350,
+      emoji: '<:Daiquiri:1520043379797266452>',
+      description: 'La misma fruta, menos remordimiento. Para conductores de lancha y responsables.',
+      stock: 120,
+      maxStock: 120,
+      category: 'cocktail'
+    },
+    'margarita_sa': {
+      id: 'margarita_sa',
+      name: 'Margarita (Sin Alcohol)',
+      price: 400,
+      emoji: '<:Margarita:1520043277292929114>',
+      description: 'Tequila sustituido por buenas intenciones y mucha lima.',
+      stock: 100,
+      maxStock: 100,
+      category: 'cocktail'
+    },
+    'caipirinha_sa': {
+      id: 'caipirinha_sa',
+      name: 'Caipirinha (Sin Alcohol)',
+      price: 450,
+      emoji: '<:Caipirinha:1520043159114223727>',
+      description: 'Lima, azúcar y agua con gas. Perfecta para el día siguiente.',
+      stock: 90,
+      maxStock: 90,
+      category: 'cocktail'
+    },
+    'pina_colada_sa': {
+      id: 'pina_colada_sa',
+      name: 'Piña Colada (Sin Alcohol)',
+      price: 500,
+      emoji: '<:PinaColada:1520042823095685160>',
+      description: 'Piña, coco y crema. Vacaciones sin resaca.',
+      stock: 80,
+      maxStock: 80,
+      category: 'cocktail'
+    },
+    'mojito_sa': {
+      id: 'mojito_sa',
+      name: 'Mojito (Sin Alcohol)',
+      price: 450,
+      emoji: '<:Mohito:1520042750106402967>',
+      description: 'Hierbabuena, lima y soda. Todo el refresco, ninguna mala decisión.',
+      stock: 90,
+      maxStock: 90,
+      category: 'cocktail'
+    },
     'chaleco_salvavidas': {
       id: 'chaleco_salvavidas',
       name: 'Chaleco Salvavidas',

@@ -171,7 +171,7 @@ La base de datos se persiste en el volumen `bsc-bilel-data`, así que los balanc
 ## 🛍️ Categorías de la tienda
 
 - **🥤 Refrescos**: Sprite, Coca-Cola, Fanta, Aquarius, Nestea.
-- **🍸 Cócteles**: Mojito, Daiquiri, Margarita, Caipirinha, Piña Colada.
+- **🍸 Cócteles**: Mojito, Daiquiri, Margarita, Caipirinha, Piña Colada, y sus versiones sin alcohol.
 - **🛟 Supervivencia básica**: Chaleco salvavidas, crema solar, chanclas del buffet.
 - **🍽️ Gastronomía**: Mojito de cubierta, buffet ilimitado, botella de ron del capitán.
 - **🎰 Entretenimiento**: Bingo, casino, karaoke, disfraces, loro de cubierta.
