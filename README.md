@@ -107,11 +107,13 @@ DISCORD_CLIENT_ID=ID_DE_TU_APLICACION
 docker-compose up -d --build
 ```
 
-### 3. Registra los comandos dentro del contenedor
+El contenedor registra los comandos slash automáticamente al arrancar y luego inicia el bot. Si añades o modificas comandos, solo tienes que reiniciar el contenedor:
 
 ```bash
-docker-compose exec bsc-bilel-bot node src/deploy.js
+docker-compose restart
 ```
+
+> Si prefieres desactivar el deploy automático, añade `AUTO_DEPLOY=false` al `.env` y regístralos manualmente con `docker-compose exec bsc-bilel-bot node src/deploy.js`.
 
 La base de datos se persiste en el volumen `bsc-bilel-data`, así que los balances y stocks se conservan entre reinicios.
 

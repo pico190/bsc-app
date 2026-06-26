@@ -16,5 +16,5 @@ COPY src ./src
 # Crear directorio de datos para persistencia con volumen
 RUN mkdir -p /app/data
 
-# Comando por defecto
-CMD ["node", "src/index.js"]
+# Comando por defecto: registra comandos y luego inicia el bot
+CMD ["node", "src/start.js"]
