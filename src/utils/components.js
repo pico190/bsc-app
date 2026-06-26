@@ -27,13 +27,39 @@ function createEconomyContainer({ title, description, fields = [], footer, butto
       new SeparatorBuilder().setSpacing(SeparatorSpacingSize.Small)
     );
 
-    const fieldsContent = fields
-      .map(field => `**${field.name}:** ${field.value}`)
-      .join('\n');
+    for (const field of fields) {
+      const fieldContent = `**${field.name}**\n${field.value}`;
 
-    container.addTextDisplayComponents(
-      new TextDisplayBuilder().setContent(fieldsContent)
-    );
+      // Discord limita cada TextDisplay a 4000 caracteres
+      if (fieldContent.length > 4000) {
+        const chunks = [];
+        let current = '';
+        const lines = field.value.split('\n');
+
+        for (const line of lines) {
+          if ((current + '\n' + line).length > 3950) {
+            chunks.push(current);
+            current = line;
+          } else {
+            current = current ? current + '\n' + line : line;
+          }
+        }
+        if (current) chunks.push(current);
+
+        container.addTextDisplayComponents(
+          new TextDisplayBuilder().setContent(`**${field.name}**`)
+        );
+        for (const chunk of chunks) {
+          container.addTextDisplayComponents(
+            new TextDisplayBuilder().setContent(chunk)
+          );
+        }
+      } else {
+        container.addTextDisplayComponents(
+          new TextDisplayBuilder().setContent(fieldContent)
+        );
+      }
+    }
   }
 
   if (footer) {
@@ -66,4 +92,11 @@ function createEconomyContainer({ title, description, fields = [], footer, butto
   };
 }
 
-module.exports = { createEconomyContainer };
+function createEphemeralReply(content) {
+  return {
+    content,
+    flags: MessageFlags.Ephemeral
+  };
+}
+
+module.exports = { createEconomyContainer, createEphemeralReply };

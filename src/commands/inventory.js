@@ -2,10 +2,11 @@ const { SlashCommandBuilder } = require('discord.js');
 const { load, save, getUser } = require('../utils/database');
 const { createEconomyContainer } = require('../utils/components');
 
-const CATEGORY_ORDER = ['refresco', 'cocktail', 'supervivencia', 'gastronomia', 'entretenimiento', 'merchandising', 'lujo', 'exclusivo'];
+const CATEGORY_ORDER = ['refresco', 'cocktail', 'helado', 'supervivencia', 'gastronomia', 'entretenimiento', 'merchandising', 'lujo', 'exclusivo'];
 const CATEGORY_LABELS = {
   refresco: '🥤 Refrescos',
   cocktail: '🍸 Cócteles',
+  helado: '🍦 Helados',
   supervivencia: '🛟 Supervivencia',
   gastronomia: '🍽️ Gastronomía',
   entretenimiento: '🎰 Entretenimiento',

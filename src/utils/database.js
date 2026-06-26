@@ -192,6 +192,86 @@ const defaultData = {
       maxStock: 90,
       category: 'cocktail'
     },
+    'helado_vainilla': {
+      id: 'helado_vainilla',
+      name: 'Helado de Vainilla',
+      price: 90,
+      emoji: '🍦',
+      description: 'Clásico, cremoso y sin sorpresas. Como Biel los domingos.',
+      stock: 500,
+      maxStock: 500,
+      category: 'helado'
+    },
+    'helado_chocolate': {
+      id: 'helado_chocolate',
+      name: 'Helado de Chocolate',
+      price: 90,
+      emoji: '🍫',
+      description: 'Para los que saben que el chocolate lo arregla todo.',
+      stock: 500,
+      maxStock: 500,
+      category: 'helado'
+    },
+    'helado_fresa': {
+      id: 'helado_fresa',
+      name: 'Helado de Fresa',
+      price: 100,
+      emoji: '🍓',
+      description: 'Rosa, dulce y peligroso para la camiseta blanca.',
+      stock: 450,
+      maxStock: 450,
+      category: 'helado'
+    },
+    'helado_limon': {
+      id: 'helado_limon',
+      name: 'Helado de Limón',
+      price: 100,
+      emoji: '🍋',
+      description: 'Ácido, refrescante y con más actitud que el capitán.',
+      stock: 450,
+      maxStock: 450,
+      category: 'helado'
+    },
+    'helado_menta_chocolate': {
+      id: 'helado_menta_chocolate',
+      name: 'Helado de Menta y Chocolate',
+      price: 120,
+      emoji: '🌿',
+      description: 'O lo amas o lo odias. No hay término medio.',
+      stock: 350,
+      maxStock: 350,
+      category: 'helado'
+    },
+    'helado_cookies': {
+      id: 'helado_cookies',
+      name: 'Helado de Cookies',
+      price: 130,
+      emoji: '🍪',
+      description: 'Galletas dentro de helado. Innovación del BSC Bilel.',
+      stock: 350,
+      maxStock: 350,
+      category: 'helado'
+    },
+    'helado_mango': {
+      id: 'helado_mango',
+      name: 'Helado de Mango',
+      price: 140,
+      emoji: '🥭',
+      description: 'Sabor tropical para sobrevivir al calor de cubierta.',
+      stock: 300,
+      maxStock: 300,
+      category: 'helado'
+    },
+    'helado_coco': {
+      id: 'helado_coco',
+      name: 'Helado de Coco',
+      price: 140,
+      emoji: '🥥',
+      description: 'Cremoso, tropical y con tropezones de coco que te pillan desprevenido.',
+      stock: 300,
+      maxStock: 300,
+      category: 'helado'
+    },
     'chaleco_salvavidas': {
       id: 'chaleco_salvavidas',
       name: 'Chaleco Salvavidas',

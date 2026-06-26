@@ -1,11 +1,12 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { load, save, getUser } = require('../utils/database');
 const { formatCoins } = require('../utils/format');
-const { createEconomyContainer } = require('../utils/components');
+const { createEconomyContainer, createEphemeralReply } = require('../utils/components');
 
 const LIMITS = {
   refresco: 50,
   cocktail: 5,
+  helado: 20,
   supervivencia: 10,
   gastronomia: 5,
   entretenimiento: 5,
@@ -63,27 +64,18 @@ module.exports = {
 
     if (!item) {
       save(data);
-      return await interaction.reply({
-        content: '❌ Ese artículo no está en la tienda. Usa `/shop` para ver el catálogo.',
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply('❌ Ese artículo no está en la tienda. Usa `/shop` para ver el catálogo.'));
     }
 
     const limit = getLimit(item);
     if (quantity > limit) {
       save(data);
-      return await interaction.reply({
-        content: `❌ Límite de compra para esta categoría: máximo **${limit}** unidades por pedido. La tripulación no puede cargar más.`,
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply(`❌ Límite de compra para esta categoría: máximo **${limit}** unidades por pedido. La tripulación no puede cargar más.`));
     }
 
     if (item.stock < quantity) {
       save(data);
-      return await interaction.reply({
-        content: `❌ No hay suficiente stock de **${item.name}**. Disponible: ${item.stock} unidades.`,
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply(`❌ No hay suficiente stock de **${item.name}**. Disponible: ${item.stock} unidades.`));
     }
 
     const user = getUser(data, interaction.user.id);
@@ -91,10 +83,7 @@ module.exports = {
 
     if (user.balance < totalPrice) {
       save(data);
-      return await interaction.reply({
-        content: `❌ No tienes suficientes monedas. Necesitas ${formatCoins(totalPrice)} y tienes ${formatCoins(user.balance)}.`,
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply(`❌ No tienes suficientes monedas. Necesitas ${formatCoins(totalPrice)} y tienes ${formatCoins(user.balance)}.`));
     }
 
     user.balance -= totalPrice;

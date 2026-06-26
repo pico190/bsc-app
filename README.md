@@ -174,6 +174,7 @@ La base de datos se persiste en el volumen `bsc-bilel-data`, así que los balanc
 
 - **🥤 Refrescos**: Sprite, Coca-Cola, Fanta, Aquarius, Nestea.
 - **🍸 Cócteles**: Mojito, Daiquiri, Margarita, Caipirinha, Piña Colada, y sus versiones sin alcohol.
+- **🍦 Helados**: Vainilla, chocolate, fresa, limón, menta-chocolate, cookies, mango y coco.
 - **🛟 Supervivencia básica**: Chaleco salvavidas, crema solar, chanclas del buffet.
 - **🍽️ Gastronomía**: Mojito de cubierta, buffet ilimitado, botella de ron del capitán.
 - **🎰 Entretenimiento**: Bingo, casino, karaoke, disfraces, loro de cubierta.

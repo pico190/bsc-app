@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 const { load, save, getUser } = require('../utils/database');
 const { formatCoins } = require('../utils/format');
-const { createEconomyContainer } = require('../utils/components');
+const { createEconomyContainer, createEphemeralReply } = require('../utils/components');
 
 const BARTENDER_ROLE_ID = '1515466137414930506';
 
@@ -63,10 +63,7 @@ module.exports = {
 
   async execute(interaction) {
     if (!isBartender(interaction.member)) {
-      return await interaction.reply({
-        content: '❌ Solo el personal de bar puede usar este comando.',
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply('❌ Solo el personal de bar puede usar este comando.'));
     }
 
     const data = load();
@@ -99,10 +96,7 @@ module.exports = {
 
       if (!item) {
         save(data);
-        return await interaction.reply({
-          content: '❌ Esa bebida no existe en la carta.',
-          ephemeral: true
-        });
+        return await interaction.reply(createEphemeralReply('❌ Esa bebida no existe en la carta.'));
       }
 
       const previousStock = item.stock;
@@ -132,26 +126,17 @@ module.exports = {
 
       if (target.bot) {
         save(data);
-        return await interaction.reply({
-          content: '❌ Los bots no beben. Aún.',
-          ephemeral: true
-        });
+        return await interaction.reply(createEphemeralReply('❌ Los bots no beben. Aún.'));
       }
 
       if (!item) {
         save(data);
-        return await interaction.reply({
-          content: '❌ Esa bebida no existe en la carta.',
-          ephemeral: true
-        });
+        return await interaction.reply(createEphemeralReply('❌ Esa bebida no existe en la carta.'));
       }
 
       if (item.stock < quantity) {
         save(data);
-        return await interaction.reply({
-          content: `❌ No hay suficiente stock de **${item.name}**. Disponible: ${item.stock}.`,
-          ephemeral: true
-        });
+        return await interaction.reply(createEphemeralReply(`❌ No hay suficiente stock de **${item.name}**. Disponible: ${item.stock}.`));
       }
 
       const user = getUser(data, target.id);

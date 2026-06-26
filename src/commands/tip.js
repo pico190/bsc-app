@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { load, save, getUser } = require('../utils/database');
 const { formatCoins } = require('../utils/format');
-const { createEconomyContainer } = require('../utils/components');
+const { createEconomyContainer, createEphemeralReply } = require('../utils/components');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -26,17 +26,11 @@ module.exports = {
     const amount = interaction.options.getInteger('cantidad', true);
 
     if (target.id === interaction.user.id) {
-      return await interaction.reply({
-        content: '❌ No puedes darte una propina a ti mismo, avaro.',
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply('❌ No puedes darte una propina a ti mismo, avaro.'));
     }
 
     if (target.bot) {
-      return await interaction.reply({
-        content: '❌ Los bots no aceptan propinas.',
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply('❌ Los bots no aceptan propinas.'));
     }
 
     const data = load();
@@ -44,10 +38,7 @@ module.exports = {
 
     if (tipper.balance < amount) {
       save(data);
-      return await interaction.reply({
-        content: `❌ No tienes suficiente dinero. Tienes ${formatCoins(tipper.balance)}.`,
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply(`❌ No tienes suficiente dinero. Tienes ${formatCoins(tipper.balance)}.`));
     }
 
     const receiver = getUser(data, target.id);

@@ -1,3 +1,5 @@
+const { createEphemeralReply } = require('../utils/components');
+
 module.exports = {
   name: 'interactionCreate',
 
@@ -10,10 +12,7 @@ module.exports = {
         await command.execute(interaction);
       } catch (error) {
         console.error(`Error ejecutando /${interaction.commandName}:`, error);
-        const message = {
-          content: '❌ Ha ocurrido un error al ejecutar este comando.',
-          ephemeral: true
-        };
+        const message = createEphemeralReply('❌ Ha ocurrido un error al ejecutar este comando.');
         if (interaction.replied || interaction.deferred) {
           await interaction.followUp(message);
         } else {

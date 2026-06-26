@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { load, save, getUser } = require('../utils/database');
 const { formatCoins, randomInt } = require('../utils/format');
-const { createEconomyContainer } = require('../utils/components');
+const { createEconomyContainer, createEphemeralReply } = require('../utils/components');
 
 const slots = ['🍒', '🍋', '🔔', '💎', '🍀', '⭐', '🏆'];
 
@@ -24,10 +24,7 @@ module.exports = {
 
     if (user.balance < bet) {
       save(data);
-      return await interaction.reply({
-        content: `❌ No tienes suficiente dinero. Tu balance es ${formatCoins(user.balance)}.`,
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply(`❌ No tienes suficiente dinero. Tu balance es ${formatCoins(user.balance)}.`));
     }
 
     const reel1 = slots[randomInt(0, slots.length - 1)];

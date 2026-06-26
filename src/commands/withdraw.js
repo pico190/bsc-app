@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { load, save, getUser } = require('../utils/database');
 const { formatCoins } = require('../utils/format');
-const { createEconomyContainer } = require('../utils/components');
+const { createEconomyContainer, createEphemeralReply } = require('../utils/components');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -22,10 +22,7 @@ module.exports = {
 
     if (user.bank < amount) {
       save(data);
-      return await interaction.reply({
-        content: `❌ No tienes suficiente dinero en el banco. Tienes ${formatCoins(user.bank)}.`,
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply(`❌ No tienes suficiente dinero en el banco. Tienes ${formatCoins(user.bank)}.`));
     }
 
     user.bank -= amount;

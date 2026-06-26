@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { load, save, getUser } = require('../utils/database');
 const { formatCoins } = require('../utils/format');
-const { createEconomyContainer } = require('../utils/components');
+const { createEconomyContainer, createEphemeralReply } = require('../utils/components');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -88,10 +88,7 @@ module.exports = {
 
       if (!item) {
         save(data);
-        return await interaction.reply({
-          content: '❌ Ese artículo no existe.',
-          ephemeral: true
-        });
+        return await interaction.reply(createEphemeralReply('❌ Ese artículo no existe.'));
       }
 
       const fields = [
@@ -131,29 +128,20 @@ module.exports = {
 
     if (!item) {
       save(data);
-      return await interaction.reply({
-        content: '❌ Ese artículo no existe.',
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply('❌ Ese artículo no existe.'));
     }
 
     const owned = user.inventory[itemId] || 0;
 
     if (owned < quantity) {
       save(data);
-      return await interaction.reply({
-        content: `❌ No tienes suficientes unidades. Tienes **${owned}** de **${item.name}**.`,
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply(`❌ No tienes suficientes unidades. Tienes **${owned}** de **${item.name}**.`));
     }
 
     if (subcommand === 'use') {
       if (!item.usable) {
         save(data);
-        return await interaction.reply({
-          content: `❌ **${item.name}** no se puede usar.`,
-          ephemeral: true
-        });
+        return await interaction.reply(createEphemeralReply(`❌ **${item.name}** no se puede usar.`));
       }
 
       user.inventory[itemId] -= quantity;
@@ -177,10 +165,7 @@ module.exports = {
     if (subcommand === 'sell') {
       if (!item.sellable) {
         save(data);
-        return await interaction.reply({
-          content: `❌ **${item.name}** no se puede revender.`,
-          ephemeral: true
-        });
+        return await interaction.reply(createEphemeralReply(`❌ **${item.name}** no se puede revender.`));
       }
 
       const total = item.sellPrice * quantity;

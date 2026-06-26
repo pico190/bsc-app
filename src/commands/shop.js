@@ -6,6 +6,7 @@ const { createEconomyContainer } = require('../utils/components');
 const CATEGORY_LABELS = {
   refresco: '🥤 Refrescos',
   cocktail: '🍸 Cócteles',
+  helado: '🍦 Helados',
   supervivencia: '🛟 Supervivencia básica',
   gastronomia: '🍽️ Comida y bebida',
   entretenimiento: '🎰 Entretenimiento',
@@ -13,6 +14,8 @@ const CATEGORY_LABELS = {
   lujo: '🧖 Lujo y bienestar',
   exclusivo: '🏆 Experiencias exclusivas'
 };
+
+const CATEGORY_ORDER = ['refresco', 'cocktail', 'helado', 'supervivencia', 'gastronomia', 'entretenimiento', 'merchandising', 'lujo', 'exclusivo'];
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -30,19 +33,17 @@ module.exports = {
       byCategory[cat].push(item);
     }
 
-    const categoryOrder = ['refresco', 'cocktail', 'supervivencia', 'gastronomia', 'entretenimiento', 'merchandising', 'lujo', 'exclusivo'];
-
     const fields = [];
-    for (const cat of categoryOrder) {
+    for (const cat of CATEGORY_ORDER) {
       const list = byCategory[cat];
       if (!list || list.length === 0) continue;
 
       const value = list.map(item => {
         const inStock = item.stock > 0;
-        const stockText = inStock ? `Stock: ${item.stock}/${item.maxStock}` : '**AGOTADO**';
-        const sellText = item.sellable ? ` · Reventa: ${formatCoins(item.sellPrice)}` : '';
-        return `${item.emoji} **${item.name}** \`(${item.id})\`\n${item.description}\nPrecio: ${formatCoins(item.price)}${sellText} · ${stockText}`;
-      }).join('\n\n');
+        const stockText = inStock ? `${item.stock}/${item.maxStock}` : '**AGOTADO**';
+        const sellText = item.sellable ? ` · ↻${formatCoins(item.sellPrice)}` : '';
+        return `${item.emoji} **${item.name}** — ${formatCoins(item.price)}${sellText} · ${stockText}`;
+      }).join('\n');
 
       fields.push({
         name: CATEGORY_LABELS[cat] || cat,
@@ -52,9 +53,9 @@ module.exports = {
 
     const payload = createEconomyContainer({
       title: '🛒 Duty Free del BSC Bilel',
-      description: 'Bienvenido a bordo. Refrescos, cócteles, merchandising y experiencias exclusivas. Los artículos con stock limitado se agotan rápido.',
+      description: 'Bienvenido a bordo. Refrescos, cócteles, helados, merchandising y experiencias exclusivas. Los artículos con stock limitado se agotan rápido.',
       fields,
-      footer: 'Usa /buy <item> [cantidad] para comprar, /item info <item> para detalles, /item sell <item> <cantidad> para reventar.'
+      footer: 'Usa /buy <item> [cantidad] para pedir, /item info <item> para detalles, /item sell <item> <cantidad> para reventar.'
     });
 
     await interaction.reply(payload);

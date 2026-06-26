@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { load, save, getUser } = require('../utils/database');
 const { formatCoins, randomInt } = require('../utils/format');
-const { createEconomyContainer } = require('../utils/components');
+const { createEconomyContainer, createEphemeralReply } = require('../utils/components');
 
 const COOLDOWN_MS = 20 * 60 * 1000; // 20 minutos
 const SUCCESS_CHANCE = 45;
@@ -52,17 +52,11 @@ module.exports = {
     const victimUser = interaction.options.getUser('usuario', true);
 
     if (victimUser.id === interaction.user.id) {
-      return await interaction.reply({
-        content: '❌ No puedes robarte a ti mismo, kamikaze.',
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply('❌ No puedes robarte a ti mismo, kamikaze.'));
     }
 
     if (victimUser.bot) {
-      return await interaction.reply({
-        content: '❌ Los bots no llevan dinero encima.',
-        ephemeral: true
-      });
+      return await interaction.reply(createEphemeralReply('❌ Los bots no llevan dinero encima.'));
     }
 
     const data = load();
@@ -88,10 +82,7 @@ module.exports = {
 
       if (victim.balance < MIN_VICTIM_BALANCE) {
         save(data);
-        return await interaction.reply({
-          content: `❌ ${victimUser.username} está más seco que la cubierta en agosto. No tiene nada que robar.`,
-          ephemeral: true
-        });
+        return await interaction.reply(createEphemeralReply(`❌ ${victimUser.username} está más seco que la cubierta en agosto. No tiene nada que robar.`));
       }
 
       thief.lastRob = now;
