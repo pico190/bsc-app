@@ -119,6 +119,22 @@ La base de datos se persiste en el volumen `bsc-bilel-data`, así que los balanc
 
 ---
 
+## 🎫 BSC Pass
+
+Sistema de suscripciones semanales que desbloquea beneficios a bordo:
+
+| Plan | Precio | Beneficios |
+| --- | --- | --- |
+| 🎫 **Basic** | Gratis | Acceso al servidor y rol de Pasajero de Turista. |
+| 🍽️ **Comfort** | 350/semana | Refrescos, zumos, Aquarius y Nestea ilimitados. Buffet libre y Cubierta VIP. |
+| 🍸 **Premium** | 1.000/semana | Todo lo de Comfort + cócteles, helados y cafés ilimitados. Eventos privados y zona exclusiva. |
+
+Si tras una semana no tienes saldo suficiente para renovar, tu plan baja automáticamente a **Basic** y pierdes los beneficios.
+
+Configura los IDs de los roles de cada plan en `src/utils/passManager.js`.
+
+---
+
 ## 🤖 Comandos disponibles
 
 ### Economía

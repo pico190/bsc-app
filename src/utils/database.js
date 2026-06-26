@@ -680,7 +680,12 @@ function getUser(data, userId) {
       lastWork: null,
       lastCrime: null,
       lastRob: null,
-      lastExcursion: null
+      lastExcursion: null,
+      passPlan: 'basic',
+      passExpiresAt: null,
+      passAutoRenew: false,
+      passLastChargeAt: null,
+      passIncludedDrinks: {}
     };
   }
   return data.users[userId];

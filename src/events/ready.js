@@ -1,4 +1,5 @@
 const { startPresenceRotation } = require('../utils/presence');
+const { startPassScheduler } = require('../utils/passManager');
 
 module.exports = {
   name: 'clientReady',
@@ -11,5 +12,8 @@ module.exports = {
 
     startPresenceRotation(client);
     console.log('🎭 Estados personalizados rotativos iniciados.');
+
+    startPassScheduler(client);
+    console.log('🎫 Scheduler de BSC Pass iniciado.');
   }
 };

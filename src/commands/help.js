@@ -14,6 +14,8 @@ const commands = [
   { name: '/buy item [cantidad]', description: 'Compra artículos. Algunos tienen límite por compra.' },
   { name: '/inventory [usuario]', description: 'Muestra tu inventario organizado por categorías.' },
   { name: '/item use/sell/info', description: 'Usa, vende o consulta información de un item.' },
+  { name: '/pass menu/subscribe/cancel/status', description: 'Gestiona tu BSC Pass.' },
+  { name: '/pass drink <bebida>', description: 'Reclama bebidas incluidas en tu plan.' },
   { name: '/casino apuesta', description: 'Juega a la tragaperras del crucero.' },
   { name: '/leaderboard', description: 'Top 10 de pasajeros más ricos.' },
   { name: '/excursion', description: 'Participa en una excursión del crucero.' },
