@@ -10,7 +10,4 @@ services:
       # - DISCORD_GUILD_ID=${DISCORD_GUILD_ID}
       - DATA_DIR=/app/data
     volumes:
-      - bsc-bilel-data:/app/data
-
-volumes:
-  bsc-bilel-data:
+      - ./data:/app/data
