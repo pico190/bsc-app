@@ -1,0 +1,16 @@
+services:
+  bsc-bilel-bot:
+    build: .
+    container_name: bsc-bilel-bot
+    restart: unless-stopped
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID}
+      # Opcional: para registro de comandos en un servidor específico
+      # - DISCORD_GUILD_ID=${DISCORD_GUILD_ID}
+      - DATA_DIR=/app/data
+    volumes:
+      - bsc-bilel-data:/app/data
+
+volumes:
+  bsc-bilel-data:

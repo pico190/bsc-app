@@ -1,0 +1,22 @@
+{
+  "name": "discord-economy-bot-v2",
+  "version": "1.0.0",
+  "description": "Bot de economía para Discord usando Discord.js v14 y Components V2",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "deploy": "node src/deploy.js"
+  },
+  "keywords": [
+    "discord",
+    "discord.js",
+    "economy",
+    "components-v2"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.19.0"
+  }
+}
