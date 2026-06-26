@@ -21,7 +21,11 @@ const defaultData = {
       description: 'Refresco de lima-limón bien frío. Perfecto para refrescarse entre partidas.',
       stock: 500,
       maxStock: 500,
-      category: 'refresco'
+      category: 'refresco',
+      usable: true,
+      sellable: true,
+      sellPrice: 54,
+      useMessage: 'Te bebes la Sprite de un trago. El burbujeo te recuerda que estás vivo y con gases.'
     },
     'cocacola': {
       id: 'cocacola',
@@ -32,7 +36,11 @@ const defaultData = {
       description: 'El clásico de toda la vida. Siempre hay alguien que pide una.',
       stock: 500,
       maxStock: 500,
-      category: 'refresco'
+      category: 'refresco',
+      usable: true,
+      sellable: true,
+      sellPrice: 60,
+      useMessage: 'Destapas la Coca-Cola y el sonido te transporta a tu infancia. O a la resaca que te espera.'
     },
     'nestea_maracuya': {
       id: 'nestea_maracuya',
@@ -43,7 +51,11 @@ const defaultData = {
       description: 'Té frío con un toque tropical de maracuyá. Dulce y refrescante.',
       stock: 250,
       maxStock: 250,
-      category: 'refresco'
+      category: 'refresco',
+      usable: true,
+      sellable: true,
+      sellPrice: 84,
+      useMessage: 'Bebes el Nestea de Maracuyá y sientes el trópico en la garganta. Instante de felicidad.'
     },
     'aquarius_melocoton': {
       id: 'aquarius_melocoton',
@@ -54,7 +66,11 @@ const defaultData = {
       description: 'Bebida isotónica sabor melocotón para recuperar energía.',
       stock: 300,
       maxStock: 300,
-      category: 'refresco'
+      category: 'refresco',
+      usable: true,
+      sellable: true,
+      sellPrice: 72,
+      useMessage: 'Te hidratas con Aquarius Melocotón. Vuelves a sentirte humano.'
     },
     'aquarius_naranja': {
       id: 'aquarius_naranja',
@@ -65,7 +81,11 @@ const defaultData = {
       description: 'Isotónica de naranja con un sabor ligero y cítrico.',
       stock: 300,
       maxStock: 300,
-      category: 'refresco'
+      category: 'refresco',
+      usable: true,
+      sellable: true,
+      sellPrice: 72,
+      useMessage: 'El Aquarius de Naranja entra suave. Tus electrolitos te lo agradecen.'
     },
     'fanta_naranja': {
       id: 'fanta_naranja',
@@ -76,7 +96,11 @@ const defaultData = {
       description: 'Refresco de naranja con burbujas y mucho azúcar. La receta de la felicidad temporal.',
       stock: 450,
       maxStock: 450,
-      category: 'refresco'
+      category: 'refresco',
+      usable: true,
+      sellable: true,
+      sellPrice: 60,
+      useMessage: 'La Fanta Naranja explota en tu boca. Azúcar pura, felicidad inmediata.'
     },
     'fanta_limon': {
       id: 'fanta_limon',
@@ -87,7 +111,11 @@ const defaultData = {
       description: 'Refresco cítrico con un punto ácido muy refrescante.',
       stock: 450,
       maxStock: 450,
-      category: 'refresco'
+      category: 'refresco',
+      usable: true,
+      sellable: true,
+      sellPrice: 60,
+      useMessage: 'El fresco de Limón recorre tu garganta como una brisa de cubierta. Perfecto.'
     },
     'aquarius_limon': {
       id: 'aquarius_limon',
@@ -98,7 +126,11 @@ const defaultData = {
       description: 'Bebida isotónica de limón, ideal para hidratarse en cubierta.',
       stock: 300,
       maxStock: 300,
-      category: 'refresco'
+      category: 'refresco',
+      usable: true,
+      sellable: true,
+      sellPrice: 72,
+      useMessage: 'Bebes el Aquarius Limón. Te rehidratas como si hubieras corrido un maratón. No lo has hecho.'
     },
     'daiquiri': {
       id: 'daiquiri',
@@ -109,7 +141,11 @@ const defaultData = {
       description: 'Cóctel afrutado preparado con ron y zumo de lima.',
       stock: 60,
       maxStock: 60,
-      category: 'cocktail'
+      category: 'cocktail',
+      usable: true,
+      sellable: true,
+      sellPrice: 330,
+      useMessage: 'Sorbes el Daiquiri y el ron te calienta el pecho. La lima te despierta. Perfecto equilibrio.'
     },
     'margarita': {
       id: 'margarita',
@@ -120,7 +156,11 @@ const defaultData = {
       description: 'El clásico mexicano con tequila y lima. Un imprescindible.',
       stock: 50,
       maxStock: 50,
-      category: 'cocktail'
+      category: 'cocktail',
+      usable: true,
+      sellable: true,
+      sellPrice: 390,
+      useMessage: 'La sal del borde, el tequila en la lengua. La Margarita es pura poesía líquida.'
     },
     'caipirinha': {
       id: 'caipirinha',
@@ -131,7 +171,11 @@ const defaultData = {
       description: 'Cóctel brasileño de cachaça, lima y azúcar de caña.',
       stock: 45,
       maxStock: 45,
-      category: 'cocktail'
+      category: 'cocktail',
+      usable: true,
+      sellable: true,
+      sellPrice: 420,
+      useMessage: 'Bebes la Caipirinha. Brasil te abraza en forma de cachaça y lima.'
     },
     'pina_colada': {
       id: 'pina_colada',
@@ -142,7 +186,11 @@ const defaultData = {
       description: 'Mezcla cremosa de piña, coco y ron. Sabe a vacaciones.',
       stock: 40,
       maxStock: 40,
-      category: 'cocktail'
+      category: 'cocktail',
+      usable: true,
+      sellable: true,
+      sellPrice: 480,
+      useMessage: 'La Piña Colada es un abrazo tropical. Coco, piña y la promesa de una siesta.'
     },
     'mojito': {
       id: 'mojito',
@@ -153,7 +201,11 @@ const defaultData = {
       description: 'Ron blanco, hierbabuena, lima y un toque de soda. El favorito de media humanidad.',
       stock: 45,
       maxStock: 45,
-      category: 'cocktail'
+      category: 'cocktail',
+      usable: true,
+      sellable: true,
+      sellPrice: 450,
+      useMessage: 'El Mojito te golpea con hierbabuena fresca. Cada sorbo sabe a verano en cubierta.'
     },
     'daiquiri_sa': {
       id: 'daiquiri_sa',
@@ -164,7 +216,11 @@ const defaultData = {
       description: 'La misma fruta, menos remordimiento. Para conductores de lancha y responsables.',
       stock: 120,
       maxStock: 120,
-      category: 'cocktail'
+      category: 'cocktail',
+      usable: true,
+      sellable: true,
+      sellPrice: 210,
+      useMessage: 'El Daiquiri sin alcohol sabe a fruta y a buenas decisiones. Quién lo diría.'
     },
     'margarita_sa': {
       id: 'margarita_sa',
@@ -175,7 +231,11 @@ const defaultData = {
       description: 'Tequila sustituido por buenas intenciones y mucha lima.',
       stock: 100,
       maxStock: 100,
-      category: 'cocktail'
+      category: 'cocktail',
+      usable: true,
+      sellable: true,
+      sellPrice: 240,
+      useMessage: 'La Margarita sin alcohol es casi igual de buena. Casi. Pero conduces mejor.'
     },
     'caipirinha_sa': {
       id: 'caipirinha_sa',
@@ -186,7 +246,11 @@ const defaultData = {
       description: 'Lima, azúcar y agua con gas. Perfecta para el día siguiente.',
       stock: 90,
       maxStock: 90,
-      category: 'cocktail'
+      category: 'cocktail',
+      usable: true,
+      sellable: true,
+      sellPrice: 270,
+      useMessage: 'Bebes la Caipirinha sin alcohol. La lima te hace una pedorreta. Refrescante.'
     },
     'pina_colada_sa': {
       id: 'pina_colada_sa',
@@ -197,7 +261,11 @@ const defaultData = {
       description: 'Piña, coco y crema. Vacaciones sin resaca.',
       stock: 80,
       maxStock: 80,
-      category: 'cocktail'
+      category: 'cocktail',
+      usable: true,
+      sellable: true,
+      sellPrice: 300,
+      useMessage: 'La Piña Colada sin alcohol sabe a paraíso sin la resaca del paraíso.'
     },
     'mojito_sa': {
       id: 'mojito_sa',
@@ -208,7 +276,11 @@ const defaultData = {
       description: 'Hierbabuena, lima y soda. Todo el refresco, ninguna mala decisión.',
       stock: 90,
       maxStock: 90,
-      category: 'cocktail'
+      category: 'cocktail',
+      usable: true,
+      sellable: true,
+      sellPrice: 270,
+      useMessage: 'El Mojito sin alcohol es pura frescura. La hierbabuena te limpia el alma.'
     },
     'helado_vainilla': {
       id: 'helado_vainilla',
@@ -219,7 +291,11 @@ const defaultData = {
       description: 'Clásico, cremoso y sin sorpresas. Como Biel los domingos.',
       stock: 500,
       maxStock: 500,
-      category: 'helado'
+      category: 'helado',
+      usable: true,
+      sellable: true,
+      sellPrice: 54,
+      useMessage: 'El Helado de Vainilla se derrite en tu lengua. Clásico, sencillo, perfecto.'
     },
     'helado_chocolate': {
       id: 'helado_chocolate',
@@ -230,7 +306,11 @@ const defaultData = {
       description: 'Para los que saben que el chocolate lo arregla todo.',
       stock: 500,
       maxStock: 500,
-      category: 'helado'
+      category: 'helado',
+      usable: true,
+      sellable: true,
+      sellPrice: 54,
+      useMessage: 'El Helado de Chocolate es pecaminoso. Cada cucharada es un billete de ida al cielo.'
     },
     'helado_fresa': {
       id: 'helado_fresa',
@@ -241,7 +321,11 @@ const defaultData = {
       description: 'Rosa, dulce y peligroso para la camiseta blanca.',
       stock: 450,
       maxStock: 450,
-      category: 'helado'
+      category: 'helado',
+      usable: true,
+      sellable: true,
+      sellPrice: 60,
+      useMessage: 'Lames el Helado de Fresa. Es rosa, dulce, y te mancha la sonrisa.'
     },
     'helado_limon': {
       id: 'helado_limon',
@@ -252,7 +336,11 @@ const defaultData = {
       description: 'Ácido, refrescante y con más actitud que el capitán.',
       stock: 450,
       maxStock: 450,
-      category: 'helado'
+      category: 'helado',
+      usable: true,
+      sellable: true,
+      sellPrice: 60,
+      useMessage: 'El Helado de Limón te despierta el paladar. Ácido y refrescante como la vida misma.'
     },
     'helado_menta_chocolate': {
       id: 'helado_menta_chocolate',
@@ -263,7 +351,11 @@ const defaultData = {
       description: 'O lo amas o lo odias. No hay término medio.',
       stock: 350,
       maxStock: 350,
-      category: 'helado'
+      category: 'helado',
+      usable: true,
+      sellable: true,
+      sellPrice: 72,
+      useMessage: 'El contraste de la menta y el chocolate te hace preguntarte por qué no comiste esto antes.'
     },
     'helado_cookies': {
       id: 'helado_cookies',
@@ -274,7 +366,11 @@ const defaultData = {
       description: 'Galletas dentro de helado. Innovación del BSC Bilel.',
       stock: 350,
       maxStock: 350,
-      category: 'helado'
+      category: 'helado',
+      usable: true,
+      sellable: true,
+      sellPrice: 78,
+      useMessage: 'El Helado de Cookies cruje con cada cucharada. Galleta y helado, la pareja perfecta.'
     },
     'helado_mango': {
       id: 'helado_mango',
@@ -285,7 +381,11 @@ const defaultData = {
       description: 'Sabor tropical para sobrevivir al calor de cubierta.',
       stock: 300,
       maxStock: 300,
-      category: 'helado'
+      category: 'helado',
+      usable: true,
+      sellable: true,
+      sellPrice: 84,
+      useMessage: 'El Helado de Mango sabe a trópico. Cierras los ojos y estás en una hamaca.'
     },
     'helado_coco': {
       id: 'helado_coco',
@@ -296,7 +396,11 @@ const defaultData = {
       description: 'Cremoso, tropical y con tropezones de coco que te pillan desprevenido.',
       stock: 300,
       maxStock: 300,
-      category: 'helado'
+      category: 'helado',
+      usable: true,
+      sellable: true,
+      sellPrice: 84,
+      useMessage: 'El Helado de Coco te transporta a una playa desierta. Cremoso, dulce, hipnótico.'
     },
     'helado_pistacho': {
       id: 'helado_pistacho',
@@ -307,7 +411,11 @@ const defaultData = {
       description: 'El sabor más controvertido del barco. O lo amas o lo odias.',
       stock: 250,
       maxStock: 250,
-      category: 'helado'
+      category: 'helado',
+      usable: true,
+      sellable: true,
+      sellPrice: 90,
+      useMessage: 'El Helado de Pistacho divide opiniones. La tuya es clara: es el mejor de todos.'
     },
     'chaleco_salvavidas': {
       id: 'chaleco_salvavidas',
