@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { load, save, getUser } = require('../utils/database');
 const { formatCoins, randomInt } = require('../utils/format');
-const { createEconomyContainer } = require('../utils/components');
+const { createEconomyContainer, createEphemeralReply } = require('../utils/components');
 
 const COOLDOWN_MS = 15 * 60 * 1000; // 15 minutos
 const MIN_REWARD = 80;
@@ -40,6 +40,11 @@ module.exports = {
     .setDescription('Comete un crimen del BSC Bilel. A veces sale bien, a veces acaba mal.'),
 
   async execute(interaction) {
+    const GAMBLING_CHANNEL = '1520034653564571779';
+    if (interaction.channelId !== GAMBLING_CHANNEL) {
+      return await interaction.reply(createEphemeralReply(`❌ Las apuestas solo se pueden hacer en <#${GAMBLING_CHANNEL}>.`));
+    }
+
     const data = load();
     const user = getUser(data, interaction.user.id);
     const now = Date.now();

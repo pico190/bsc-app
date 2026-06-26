@@ -18,6 +18,11 @@ module.exports = {
     ),
 
   async execute(interaction) {
+    const GAMBLING_CHANNEL = '1520034653564571779';
+    if (interaction.channelId !== GAMBLING_CHANNEL) {
+      return await interaction.reply(createEphemeralReply(`❌ Las apuestas solo se pueden hacer en <#${GAMBLING_CHANNEL}>.`));
+    }
+
     const bet = interaction.options.getInteger('apuesta', true);
     const data = load();
     const user = getUser(data, interaction.user.id);
