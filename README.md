@@ -131,8 +131,6 @@ Sistema de suscripciones semanales que desbloquea beneficios a bordo:
 
 Si tras una semana no tienes saldo suficiente para renovar, tu plan baja automáticamente a **Basic** y pierdes los beneficios.
 
-Configura los IDs de los roles de cada plan en `src/utils/passManager.js`.
-
 ---
 
 ## 🤖 Comandos disponibles

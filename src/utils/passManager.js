@@ -8,7 +8,7 @@ const PLANS = {
     emoji: '🎫',
     price: 0,
     weeklyPrice: 0,
-    roleId: null, // Reemplazar con ID del rol Pasajero de Turista
+    roleId: '1520090124401115186',
     description: 'Solo viaje. Acceso básico al servidor.',
     benefits: [
       'Acceso al servidor',
@@ -26,7 +26,7 @@ const PLANS = {
     emoji: '🍽️',
     price: 350,
     weeklyPrice: 350,
-    roleId: null, // Reemplazar con ID del rol Pasajero de Primera Clase
+    roleId: '1520090147604136007',
     description: 'Todo incluido básico. Refrescos, comida y cubierta VIP.',
     benefits: [
       'Todo lo del Basic',
@@ -45,7 +45,7 @@ const PLANS = {
     emoji: '🍸',
     price: 1000,
     weeklyPrice: 1000,
-    roleId: null, // Reemplazar con ID del rol Huésped de Lujo
+    roleId: '1520090177463128195',
     description: 'Todo incluido deluxe. Cócteles, eventos privados y zona exclusiva.',
     benefits: [
       'Todo lo del Comfort',
