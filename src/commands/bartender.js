@@ -54,7 +54,7 @@ module.exports = {
       })
       .slice(0, 25)
       .map(item => ({
-        name: `${item.emoji} ${item.name} — Stock: ${item.stock}/${item.maxStock}`,
+        name: `${item.menuEmoji || item.emoji} ${item.name} — Stock: ${item.stock}/${item.maxStock}`,
         value: item.id
       }));
 

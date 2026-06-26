@@ -48,7 +48,7 @@ module.exports = {
       })
       .slice(0, 25)
       .map(item => ({
-        name: `${item.emoji} ${item.name} — ${item.price} BSC · Stock: ${item.stock}`,
+        name: `${item.menuEmoji || item.emoji} ${item.name} — ${item.price} BSC · Stock: ${item.stock}`,
         value: item.id
       }));
 

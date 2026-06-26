@@ -87,7 +87,7 @@ module.exports = {
         const used = user.passIncludedDrinks[item.id] || 0;
         const limit = plan.dailyDrinkLimit || 0;
         return {
-          name: `${item.emoji} ${item.name} — ${used}/${limit} hoy`,
+          name: `${item.menuEmoji || item.emoji} ${item.name} — ${used}/${limit} hoy`,
           value: item.id
         };
       });

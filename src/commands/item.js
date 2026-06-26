@@ -55,7 +55,7 @@ module.exports = {
         })
         .map(([itemId]) => {
           const item = data.items[itemId];
-          return { name: `${item.emoji} ${item.name} — Tienes ${user.inventory[itemId]}`, value: item.id };
+          return { name: `${item.menuEmoji || item.emoji} ${item.name} — Tienes ${user.inventory[itemId]}`, value: item.id };
         });
     } else if (subcommand === 'sell') {
       choices = Object.entries(user.inventory)
@@ -66,13 +66,13 @@ module.exports = {
         })
         .map(([itemId]) => {
           const item = data.items[itemId];
-          return { name: `${item.emoji} ${item.name} — ${formatCoins(item.sellPrice)} c/u · Tienes ${user.inventory[itemId]}`, value: item.id };
+          return { name: `${item.menuEmoji || item.emoji} ${item.name} — ${formatCoins(item.sellPrice)} c/u · Tienes ${user.inventory[itemId]}`, value: item.id };
         });
     } else if (subcommand === 'info') {
       choices = Object.values(data.items)
         .filter(item => (`${item.id} ${item.name}`.toLowerCase().includes(focused)))
         .slice(0, 25)
-        .map(item => ({ name: `${item.emoji} ${item.name}`, value: item.id }));
+        .map(item => ({ name: `${item.menuEmoji || item.emoji} ${item.name}`, value: item.id }));
     }
 
     await interaction.respond(choices.slice(0, 25));

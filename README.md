@@ -157,7 +157,7 @@ Configura los IDs de los roles de cada plan en `src/utils/passManager.js`.
 
 | Comando | Descripción |
 | --- | --- |
-| `/shop` | Muestra la tienda duty free completa. |
+| `/shop` o `/store` | Muestra la tienda duty free completa. |
 | `/buy item [cantidad]` | Compra artículos. Algunos tienen límites por compra. |
 | `/inventory [usuario]` | Muestra el inventario organizado por categorías. |
 | `/item use item [cantidad]` | Usa un item y muestra su frase temática. |

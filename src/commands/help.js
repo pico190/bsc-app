@@ -10,7 +10,7 @@ const commands = [
   { name: '/pay @usuario cantidad', description: 'Transfiere monedas a otro usuario.' },
   { name: '/deposit cantidad', description: 'Guarda dinero en el banco.' },
   { name: '/withdraw cantidad', description: 'Saca dinero del banco.' },
-  { name: '/shop', description: 'Muestra la tienda del BSC Bilel.' },
+  { name: '/shop o /store', description: 'Muestra la tienda del BSC Bilel.' },
   { name: '/buy item [cantidad]', description: 'Compra artículos. Algunos tienen límite por compra.' },
   { name: '/inventory [usuario]', description: 'Muestra tu inventario organizado por categorías.' },
   { name: '/item use/sell/info', description: 'Usa, vende o consulta información de un item.' },
