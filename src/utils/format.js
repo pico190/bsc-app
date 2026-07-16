@@ -11,4 +11,8 @@ function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-module.exports = { formatCoins, formatDate, randomInt };
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+module.exports = { formatCoins, formatDate, randomInt, sleep };
