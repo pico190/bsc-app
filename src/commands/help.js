@@ -85,10 +85,11 @@ module.exports = {
     const buttons = buildButtonData(page, totalPages, userId);
     const payload = createEconomyContainer({ ...containerPayload, buttons });
 
-    const message = await interaction.reply({
+    const response = await interaction.reply({
       ...payload,
-      fetchReply: true
+      withResponse: true
     });
+    const message = response.resource.message;
 
     if (totalPages <= 1) return;
 

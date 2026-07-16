@@ -152,7 +152,8 @@ module.exports = {
     const held = [false, false, false, false, false];
 
     const payload = buildPayload(hand, held, bet, 'hold', userId, null);
-    const msg = await interaction.reply({ ...payload, fetchReply: true });
+    const response = await interaction.reply({ ...payload, withResponse: true });
+    const msg = response.resource.message;
 
     const collector = msg.createMessageComponentCollector({
       componentType: ComponentType.Button,

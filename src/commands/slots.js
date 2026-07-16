@@ -58,10 +58,11 @@ module.exports = {
     const final2 = spinReel();
     const final3 = spinReel();
 
-    const msg = await interaction.reply({
+    const response = await interaction.reply({
       ...buildSpinFrame('🎰', null, null, `Apuesta: ${formatCoins(bet)}`, '🔄 Girando...'),
-      fetchReply: true
+      withResponse: true
     });
+    const msg = response.resource.message;
 
     await sleep(800);
     await msg.edit(buildSpinFrame(final1, null, null, `Apuesta: ${formatCoins(bet)}`, '🔄 Girando...'));

@@ -72,18 +72,23 @@ function createEconomyContainer({ title, description, fields = [], footer, butto
   }
 
   if (buttons.length > 0) {
-    const actionRow = new ActionRowBuilder();
-    for (const btn of buttons) {
-      actionRow.addComponents(
-        new ButtonBuilder()
+    const isNested = Array.isArray(buttons[0]);
+    const rows = isNested ? buttons : [buttons];
+
+    for (const row of rows) {
+      if (row.length === 0) continue;
+      const actionRow = new ActionRowBuilder();
+      for (const btn of row) {
+        const builder = new ButtonBuilder()
           .setCustomId(btn.customId)
           .setLabel(btn.label)
           .setStyle(btn.style || ButtonStyle.Primary)
-          .setEmoji(btn.emoji || '💰')
-          .setDisabled(btn.disabled || false)
-      );
+          .setDisabled(btn.disabled || false);
+        if (btn.emoji) builder.setEmoji(btn.emoji);
+        actionRow.addComponents(builder);
+      }
+      container.addActionRowComponents(actionRow);
     }
-    container.addActionRowComponents(actionRow);
   }
 
   return {

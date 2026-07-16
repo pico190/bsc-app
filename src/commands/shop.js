@@ -94,10 +94,11 @@ module.exports = {
     const initialPage = buildPage(data, page);
     const totalPages = initialPage.totalPages;
 
-    const message = await interaction.reply({
+    const response = await interaction.reply({
       ...buildPayload(data, page, userId),
-      fetchReply: true
+      withResponse: true
     });
+    const message = response.resource.message;
 
     if (totalPages <= 1) return;
 

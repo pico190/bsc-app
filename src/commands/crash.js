@@ -92,10 +92,11 @@ module.exports = {
     let cashedOut = false;
     let cashoutMultiplier = 0;
 
-    const msg = await interaction.reply({
+    const response = await interaction.reply({
       ...buildPayload(currentMultiplier, bet, false, false, userId),
-      fetchReply: true
+      withResponse: true
     });
+    const msg = response.resource.message;
 
     const collector = msg.createMessageComponentCollector({
       componentType: ComponentType.Button,

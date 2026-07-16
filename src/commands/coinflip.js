@@ -62,10 +62,11 @@ module.exports = {
 
     const ladoLabel = lado === 'cara' ? '👑 Cara' : '⚓ Cruz';
 
-    const msg = await interaction.reply({
+    const response = await interaction.reply({
       ...buildFrame('🟡', true, ladoLabel, bet, '🔄 La moneda gira...'),
-      fetchReply: true
+      withResponse: true
     });
+    const msg = response.resource.message;
 
     for (let i = 0; i < 5; i++) {
       await sleep(350);

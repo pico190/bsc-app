@@ -155,7 +155,8 @@ module.exports = {
       footer: 'Encuentra 💎 para ganar. Evita las 💣.'
     });
 
-    const msg = await interaction.reply({ ...payload, fetchReply: true });
+    const response = await interaction.reply({ ...payload, withResponse: true });
+    const msg = response.resource.message;
 
     const collector = msg.createMessageComponentCollector({
       componentType: ComponentType.Button,

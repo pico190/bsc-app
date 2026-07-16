@@ -138,7 +138,8 @@ module.exports = {
     }
 
     const payload = buildPayload(playerHand, dealerHand, bet, true, 'Tu turno. ¿Qué haces?', userId, false);
-    const msg = await interaction.reply({ ...payload, fetchReply: true });
+    const response = await interaction.reply({ ...payload, withResponse: true });
+    const msg = response.resource.message;
 
     const collector = msg.createMessageComponentCollector({
       componentType: ComponentType.Button,

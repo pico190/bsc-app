@@ -69,10 +69,11 @@ module.exports = {
 
     const tipoLabel = tipo === 'bajo' ? '📉 Bajo (2-6)' : tipo === 'siete' ? '🕖 Siete (7)' : '📈 Alto (8-12)';
 
-    const msg = await interaction.reply({
+    const response = await interaction.reply({
       ...buildFrame(0, 0, true, tipoLabel, bet, '🔄 Tirando los dados...'),
-      fetchReply: true
+      withResponse: true
     });
+    const msg = response.resource.message;
 
     for (let i = 0; i < 5; i++) {
       await sleep(400);

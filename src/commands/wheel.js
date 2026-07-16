@@ -70,10 +70,11 @@ module.exports = {
     user.balance -= bet;
     save(data);
 
-    const msg = await interaction.reply({
+    const response = await interaction.reply({
       ...buildFrame(0, true, bet),
-      fetchReply: true
+      withResponse: true
     });
+    const msg = response.resource.message;
 
     const totalFrames = 15;
     const finalIdx = randomInt(0, SEGMENTS.length - 1);

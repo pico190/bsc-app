@@ -89,10 +89,11 @@ module.exports = {
 
     const betLabel = tipo === 'numero' ? `Número ${numeroElegido}` : tipo.charAt(0).toUpperCase() + tipo.slice(1);
 
-    const msg = await interaction.reply({
+    const response = await interaction.reply({
       ...buildFrame(randomInt(0, 36), true, betLabel, bet),
-      fetchReply: true
+      withResponse: true
     });
+    const msg = response.resource.message;
 
     const bounceFrames = 6;
     for (let i = 0; i < bounceFrames; i++) {
