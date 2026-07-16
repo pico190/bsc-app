@@ -1066,7 +1066,9 @@ const defaultData = {
 
 function load() {
   if (!fs.existsSync(dbPath)) {
-    return structuredClone(defaultData);
+    const initial = structuredClone(defaultData);
+    save(initial);
+    return initial;
   }
   try {
     const data = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
